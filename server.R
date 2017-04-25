@@ -13,7 +13,7 @@ library(shiny)
 shinyServer(function(input, output) {
   output$meanWeightText <- reactive({
         m <- mean(women[women$height >= input$minheight,]$weight)
-        paste("Average weight for women with height >= ", input$minheight, ":", m)
+        paste("Average weight for women with height >= ", input$minheight,"lbs", ":", m)
     })
     
   output$womenPlot <- renderPlot({
@@ -21,7 +21,7 @@ shinyServer(function(input, output) {
     # generate bins based on input$bins from ui.R
     
     # draw the histogram with the specified number of bins
-    plot(weight ~ height, data=women[women$height >= input$minheight,],xlab="height (in)", ylab="weight (lbs)", main="Average Heights and Weights for American Women")
+    plot(weight ~ height, data=women,xlab="height (in)", ylab="weight (lbs)", main="Average Heights and Weights for American Women")
     model <- lm(weight ~ height, data=women)
     abline(model)
     

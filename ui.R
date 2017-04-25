@@ -19,7 +19,8 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-       helpText("Directions: Use the slider on the left to recalculate the average weights on the right"),
+       helpText("Directions: Use the slider on the left to recalculate the average weights on the right. Repository: https://github.com/dhyppolite/dataproducts-final"),
+       
        sliderInput("minheight",
                    "Min Height:",
                    min = 58,
